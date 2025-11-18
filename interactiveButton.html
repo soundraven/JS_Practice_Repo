@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: system-ui;
+        background: #5b9a8b;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn {
+        background-color: #f3fde8;
+        box-shadow: 0 14px 0 #a8df8e, 0 20px 14px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        height: 70px;
+        color: #5b9a8b;
+        font: bold 24px/1 "arial";
+        border-radius: 10px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: 0.7s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn > .loader {
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 4px solid #5b9a8b;
+        border-top-color: transparent;
+        border-radius: 50%;
+
+        /* 이곳을 채워주세요. hint) animation */
+        animation: spinner 1s linear infinite;
+      }
+
+      .btn.loading {
+        /* 이곳을 채워주세요. hint) transform */
+        transform: translateY(10px);
+
+        box-shadow: 0 4px 0 #a8df8e, 0 4px 4px;
+      }
+
+      .btn.loading > .text {
+        display: none;
+      }
+
+      .btn.loading > .loader {
+        display: block;
+      }
+
+      @keyframes spinner {
+        /* 이곳을 채워주세요. hint) tranform 360도 돌아가게 */
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">
+      <span class="text">WELCOME!</span>
+      <span class="loader"></span>
+    </button>
+
+    <script>
+      const buttonEl = document.querySelector(".btn")
+      buttonEl.addEventListener("click", () => {
+        buttonEl.classList.add("loading")
+
+        setTimeout(() => {
+          buttonEl.classList.remove("loading")
+        }, 3000)
+      })
+    </script>
+  </body>
+</html>
