@@ -1,3 +1,9 @@
+# JS_Practice_Repo(11/24)
+
+## Mandoo Shop
+
+![데모 화면](./shoping/mandooShop.gif)
+
 # JS_Practice_Repo(11/18)
 
 ## interactiveButton.html

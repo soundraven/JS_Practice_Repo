@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "productName": "만두 포토카드",
+    "productPrice": 10000,
+    "productImgFileName": "photoCard.png"
+  },
+  {
+    "id": 1,
+    "productName": "만두 손거울",
+    "productPrice": 5000,
+    "productImgFileName": "handMirror.png"
+  },
+  {
+    "id": 2,
+    "productName": "만두 티셔츠",
+    "productPrice": 15000,
+    "productImgFileName": "tshirt.png"
+  }
+]

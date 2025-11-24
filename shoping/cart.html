@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../reset.css" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: lightyellow;
+        height: 100vh;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      a {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cart">
+      <h1>Cart</h1>
+      <ul></ul>
+      <a href="./index.html">back</a>
+    </main>
+
+    <script>
+      function getCartItems() {
+        const items = localStorage.getItem("cartItems")
+        return items ? JSON.parse(items) : []
+      }
+
+      function renderCart() {
+        const cartList = document.querySelector("ul")
+        const cartItems = getCartItems()
+
+        if (cartItems.length === 0) {
+          alert("장바구니가 비어 있습니다.")
+          location.href = "./index.html"
+          return
+        }
+
+        cartList.innerHTML = ""
+
+        cartItems.forEach((item) => {
+          const li = document.createElement("li")
+          li.textContent = `${item.productName} x ${item.qty}`
+          cartList.appendChild(li)
+        })
+      }
+
+      document.addEventListener("DOMContentLoaded", renderCart)
+    </script>
+  </body>
+</html>
